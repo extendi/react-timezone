@@ -142,6 +142,7 @@ export default class TimezonePicker extends React.Component {
       >
         <div className="timezone-picker-textfield">
           <input
+            className="form-control input-sm"
             disabled={this.props.disabled}
             type="text"
             onFocus={e => this.handleFocus(e)}
@@ -157,7 +158,7 @@ export default class TimezonePicker extends React.Component {
           />
         </div>
         <ul
-          className="timezone-picker-list"
+          className="timezone-picker-list bring-top"
           ref={(options) => {
             this.options = options;
           }}
@@ -165,7 +166,7 @@ export default class TimezonePicker extends React.Component {
           {this.filteredTimezones().map((zone, index, arr) => {
             const focused = this.state.focused % arr.length === index;
             return (
-              <button
+              <li
                 key={zone}
                 title={zone}
                 onMouseDown={() => this.handleSelect(zone)}
@@ -176,7 +177,7 @@ export default class TimezonePicker extends React.Component {
                 })}
               >
                 {zone}
-              </button>
+              </li>
             );
           })}
         </ul>
