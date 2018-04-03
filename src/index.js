@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import './styles.styl';
+// import './styles.styl';
 
 export default class TimezonePicker extends React.Component {
   constructor(props) {
